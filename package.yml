@@ -1,4 +1,4 @@
-name: package-yaml
+name: package-yml
 version: 0.0.1
 description: Use YAML for your NPM Package
 main: index.js
