@@ -2,14 +2,14 @@ var yaml = require('js-yaml');
 var fs = require('fs');
 var path = require("path");
 
-function yamlToJsonAsync(yamlFilePath, jsonFilePath) {
+function yamlToJsonSync(yamlFilePath, jsonFilePath) {
   var yamlFileData = fs.readFileSync(yamlFilePath, "utf8");
   yamlFileData = yaml.load(yamlFileData);
   yamlFileData = JSON.stringify(yamlFileData, null, 4);
   return fs.writeFileSync(jsonFilePath, yamlFileData);
 }
 
-function jsonToYamlAsync(jsonFilePath, yamlFilePath) {
+function jsonToYamlSync(jsonFilePath, yamlFilePath) {
   var jsonFileData = fs.readFileSync(jsonFilePath, "utf8");
   jsonFileData = JSON.parse(jsonFileData);
   jsonFileData = yaml.dump(jsonFileData);
@@ -30,17 +30,17 @@ var ymlOrYamlFilePath = function() {
 }()
 
 if (ymlOrYamlFilePath) {
-  yamlToJsonAsync(ymlOrYamlFilePath, jsonFilePath)
+  yamlToJsonSync(ymlOrYamlFilePath, jsonFilePath)
 } else if(jsonFileExists) {
-  jsonToYamlAsync(jsonFilePath, ymlFilePath);
-  fs.unlinkAsync(jsonFilePath);
+  jsonToYamlSync(jsonFilePath, ymlFilePath);
+  fs.unlinkSync(jsonFilePath);
 }
 
 process.on('exit', function() {
   var jsonFileExists = fs.existsSync(jsonFilePath); //json might exist now (npm init)
   if (jsonFileExists) {
       var existingYmlOrYamlOrYml = ymlOrYamlFilePath || ymlFilePath;
-      jsonToYamlAsync(jsonFilePath, existingYmlOrYamlOrYml);
-      fs.unlinkAsync(jsonFilePath);
+      jsonToYamlSync(jsonFilePath, existingYmlOrYamlOrYml);
+      fs.unlinkSync(jsonFilePath);
   }
 });
