@@ -18,7 +18,7 @@ function jsonToYamlAsync(jsonFilePath, yamlFilePath) {
 
 var projectDir = process.cwd();
 var jsonFilePath = path.join(process.cwd(), "package.json");
-var jsonFileExists = path.join(projectDir, jsonFilePath);
+var jsonFileExists = fs.existsSync(jsonFilePath);
 var ymlFilePath = path.join(projectDir, "package.yml");
 var yamlFilePath = path.join(projectDir, "package.yml");
 var ymlFileExists = fs.existsSync(ymlFilePath);
@@ -36,10 +36,8 @@ if (ymlOrYamlFilePath) {
 }
 
 process.on('exit', function() {
-  if (ymlOrYamlFilePath) {
-    var jsonFileExists = fs.existsSync(jsonFilePath);
-    if (jsonFileExists) {
-      jsonToYamlAsync(jsonFilePath, ymlOrYamlFilePath);
-    }
+  if (jsonFileExists) {
+      var existingYmlOrYamlOrYml = ymlOrYamlFilePath || ymlFilePath;
+      jsonToYamlAsync(jsonFilePath, existingYmlOrYamlOrYml);
   }
 });
