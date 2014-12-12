@@ -3,12 +3,8 @@ version: 0.0.1
 description: Use YAML for your NPM Package
 main: index.js
 author: Thomas Reggi
-license: ISC
+license: MIT
 scripts:
-  poobah: "echo \"test\""
-  freak: "echo \"freak\""
-  test: "echo \"this is a test2\""
-  win: "echo \"im alive\""
-  nice: "echo 'hello'"
+  pkgjson: "ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))' < ./package.yml > ./pkg.json"
 dependencies:
   js-yaml: ^3.2.3
