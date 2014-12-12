@@ -1,6 +1,6 @@
 # package-yml
 
-This is an attempt to work off of [`npm-yaml`](https://github.com/saschagehlich/npm-yaml). In an effort to use `yml` instead of `json` for npm's package file.
+This is on the shoulders of the work of [@saschagehlich](https://github.com/saschagehlich) and the [`npm-yaml`](https://github.com/saschagehlich/npm-yaml) project. In an effort to use `yml` instead of `json` for npm's package file.
 
 ## Important!
 
