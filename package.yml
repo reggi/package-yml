@@ -12,7 +12,4 @@ scripts:
   win: "echo \"im alive\""
   nice: "echo 'hello'"
 dependencies:
-  debug: ^2.1.0
   js-yaml: ^3.2.3
-  minimist: ^1.1.0
-  underscore: ^1.7.0
