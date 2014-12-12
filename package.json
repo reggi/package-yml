@@ -1,19 +1,19 @@
 {
-  "name": "package-yml",
-  "version": "0.0.1",
-  "description": "Use YAML for your NPM Package",
-  "main": "index.js",
-  "bin": "bin.js",
-  "author": "Thomas Reggi",
-  "license": "ISC",
-  "scripts": {
-    "poobah": "echo \"test\"",
-    "freak": "echo \"freak\"",
-    "test": "echo \"this is a test2\"",
-    "win": "echo \"im alive\"",
-    "nice": "echo 'hello'"
-  },
-  "dependencies": {
-    "js-yaml": "^3.2.3"
-  }
+    "name": "package-yml",
+    "version": "0.0.1",
+    "description": "Use YAML for your NPM Package",
+    "main": "index.js",
+    "bin": "bin.js",
+    "author": "Thomas Reggi",
+    "license": "ISC",
+    "scripts": {
+        "poobah": "echo \"test\"",
+        "freak": "echo \"freak\"",
+        "test": "echo \"this is a test2\"",
+        "win": "echo \"im alive\"",
+        "nice": "echo 'hello'"
+    },
+    "dependencies": {
+        "js-yaml": "^3.2.3"
+    }
 }
