@@ -10,9 +10,18 @@ Check the source code, help me make it the best it could be.
 
 ## Install
 
+```bash
+npm install package-yml --global
+npm config set onload-script package-yml
+npm build
 ```
-npm install package-yml --global && npm config set onload-script package-yml
+
+or 
+
+```bash
+npm install package-yml --global && npm config set onload-script package-yml && npm build
 ```
+
 ## Why
 
 It's easier to read and write `yml` over `json`.
