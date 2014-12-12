@@ -1,11 +1,8 @@
-var debug = require("debug")("npm-yaml");
-var argv = require('minimist')(process.argv.slice(2));
 var yaml = require('js-yaml');
 var fs = require('fs');
 var path = require("path");
 
 function yamlToJsonAsync(yamlFilePath, jsonFilePath) {
-  debug("converting yaml and writing (async)");
   var yamlFileData = fs.readFileSync(yamlFilePath, "utf8");
   yamlFileData = yaml.load(yamlFileData);
   yamlFileData = JSON.stringify(yamlFileData, null, 4);
@@ -13,7 +10,6 @@ function yamlToJsonAsync(yamlFilePath, jsonFilePath) {
 }
 
 function jsonToYamlAsync(jsonFilePath, yamlFilePath) {
-  debug("converting json and writing (async)");
   var jsonFileData = fs.readFileSync(jsonFilePath, "utf8");
   jsonFileData = JSON.parse(jsonFileData);
   jsonFileData = yaml.dump(jsonFileData);
