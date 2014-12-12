@@ -21,6 +21,7 @@ It's easier to read and write `yml` over `json`.
 
 Every time you run an `npm` command `package-yml` will check for a `yml` file. If one exists it will update the existing `json` file with the contents. When the `npm` process exists the contents from the `json` will update the `yml` file. **It will delete your `json` file when it saves the data to the `yml` file.**
 
+---
 
 Copyright (c) 2014 Thomas Reggi
 
