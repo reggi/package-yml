@@ -33,6 +33,7 @@ if (ymlOrYamlFilePath) {
   yamlToJsonAsync(ymlOrYamlFilePath, jsonFilePath)
 } else if(jsonFileExists) {
   jsonToYamlAsync(jsonFilePath, ymlFilePath);
+  fs.unlinkAsync(jsonFilePath);
 }
 
 process.on('exit', function() {
@@ -40,5 +41,6 @@ process.on('exit', function() {
   if (jsonFileExists) {
       var existingYmlOrYamlOrYml = ymlOrYamlFilePath || ymlFilePath;
       jsonToYamlAsync(jsonFilePath, existingYmlOrYamlOrYml);
+      fs.unlinkAsync(jsonFilePath);
   }
 });
