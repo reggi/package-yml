@@ -5,7 +5,7 @@ This is an attempt to work off of [`npm-yaml`](https://github.com/saschagehlich/
 ## Install
 
 ```
-npm install package-yml --global && npm set config onload-script package-yml
+npm install package-yml --global && npm config set onload-script package-yml
 ```
 ## Why
 
