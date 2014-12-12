@@ -1,5 +1,5 @@
 name: package-yml
-version: 0.0.2-0
+version: 0.0.2
 description: Use YAML for your NPM Package
 main: index.js
 author: Thomas Reggi
