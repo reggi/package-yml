@@ -36,6 +36,7 @@ if (ymlOrYamlFilePath) {
 }
 
 process.on('exit', function() {
+  var jsonFileExists = fs.existsSync(jsonFilePath); //json might exist now (npm init)
   if (jsonFileExists) {
       var existingYmlOrYamlOrYml = ymlOrYamlFilePath || ymlFilePath;
       jsonToYamlAsync(jsonFilePath, existingYmlOrYamlOrYml);
